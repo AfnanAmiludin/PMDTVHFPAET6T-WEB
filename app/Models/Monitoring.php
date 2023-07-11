@@ -23,4 +23,9 @@ class Monitoring extends Model
     {
         return $this->hasOne(Tx::class, 'id');
     }
+
+    // public function tx()
+    // {
+    //     return $this->belongsTo(Tx::class);
+    // }
 }

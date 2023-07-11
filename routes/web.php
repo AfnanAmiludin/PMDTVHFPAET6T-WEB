@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\authController;
+use App\Http\Controllers\monitoringController;
+use App\Http\Controllers\txController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,20 +19,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 })->name('login')->middleware('guest'); //login first page acces
-Route::get('/registrasi', function () {
-    return view('');
+
+Route::get('/register', function () {
+    return view('register');
 });
+
+Route::get('/choose', function () {
+    return view('choose');
+})->name('choose');
+
 //Controller
-Route::post('/registrasiController', [authController::class, 'registrasi']);
-Route::post('/loginController', [authController::class, 'login']);
-Route::post('/logoutController', [authController::class, 'logout']);
+Route::post('/create', [authController::class, 'registrasi']);
+Route::post('/login', [authController::class, 'login']);
+Route::get('/logout', [authController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/txOne', [txController::class, 'getTxOne']);
-    Route::get('/txTwo', [txController::class, 'getTxTwo']);
+    Route::get('/txOne', [txController::class, 'getTxOne'])->name('tx-1');
+    Route::get('/txTwo', [txController::class, 'getTxTwo'])->name('tx-2');
+    Route::post('/processtx', [txController::class, 'processTx']);
 
     Route::prefix('tx')->group(function () {
-        Route::get('/{tx}/monitoring', [monitoringController::class, 'oneMonitoring']);
-        Route::put('/{tx}/monitoring', [monitoringController::class, 'update']);
+        Route::get('/{tx}/monitoring', [monitoringController::class, 'edit'])->name('edit');
+        Route::put('/{tx}/monitoring', [monitoringController::class, 'update'])->name('update');
     });
 });

@@ -18,7 +18,7 @@ class authController extends Controller
         ]);
         $attribute['password'] = Hash::make($request->password);
         User::create($attribute);
-        return redirect()->intended('');
+        return redirect()->route('login');
     }
     public function login(Request $request)
     {
@@ -30,13 +30,13 @@ class authController extends Controller
             return back()->with('loginError', 'login failed, please sign-in again!');
         }
         $request->session()->regenerate();
-        return redirect()->intended('');
+        return redirect()->route('choose');
     }
     public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect();
+        return redirect()->route('login');
     }
 }
