@@ -17,11 +17,7 @@
                 <div class="grid grid-cols-3 p-6 bg-blue-500 rounded-full items-center">
                     <div class="information text-white font-semibold text-lg">
                         @yield('ready')
-
-                        <div class="alarm flex gap-5">
-                            <div class="bg-red-600 rounded-2xl h-5 w-10"></div>
-                            <h4>Alarm</h4>
-                        </div>
+                        @yield('alarm')
 
                         <div class="transmit flex gap-5">
                             <div class="bg-gray-400 rounded-2xl h-5 w-10" id="transmit"></div>

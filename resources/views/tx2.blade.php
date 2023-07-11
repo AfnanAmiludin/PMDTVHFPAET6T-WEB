@@ -1,7 +1,7 @@
 @extends('layout.monitoring')
 @section('ready')
     <div class="ready flex gap-5">
-        <div class="bg-green-700 rounded-2xl h-5 w-10"></div>
+        <div class="bg-gray-600 rounded-2xl h-5 w-10"></div>
         <h4>Ready</h4>
     </div>
 @endsection
@@ -12,14 +12,25 @@
         <h4>Stand By</h4>
     </div>
 @endsection
+@section('alarm')
+    <div class="alarm flex gap-5">
+
+        @if ($txTwo->monitoring->vswr == 0)
+            <div class="bg-gray-600 rounded-2xl h-5 w-10"></div> 
+        @else
+            <div class="bg-red-600 rounded-2xl h-5 w-10"></div> 
+        @endif
+        <h4>Alarm</h4>
+    </div>
+@endsection
 
 @section('data')
-<h4>{{ $txTwo->monitoring->frequensi }}</h4>
+<h4>{{ $txTwo->monitoring->frequensi }} MHz</h4>
 <h4>{{ $txTwo->monitoring->mode }}</h4>
 <h4>{{ $txTwo->monitoring->line_in }}</h4>
-<h4>{{ $txTwo->monitoring->mod_depth }}</h4>
-<h4>{{ $txTwo->monitoring->offset }}</h4>
-<h4>{{ $txTwo->monitoring->step }}</h4>
+<h4>{{ $txTwo->monitoring->mod_depth }} %</h4>
+<h4>{{ $txTwo->monitoring->offset }} KHz</h4>
+<h4>{{ $txTwo->monitoring->step }} KHz</h4>
 @endsection
 
 @section('bar')

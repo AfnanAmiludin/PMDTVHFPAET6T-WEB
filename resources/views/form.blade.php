@@ -14,7 +14,7 @@
                 @csrf
                 @method('put')
                 <div class="mb-6">
-                    <label for="frequensi" class="block mb-2 text-sm font-medium text-gray-900">Frekuensi</label>
+                    <label for="frequensi" class="block mb-2 text-sm font-medium text-gray-900">Frekuensi (MHz)</label>
                     <input type="number" id="frequensi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0" placeholder="" name="frequensi" value="{{ $data->frequensi }}" required>
                 </div>
 
@@ -29,17 +29,17 @@
                 </div>
                 
                 <div class="mb-6">
-                    <label for="mod_depth" class="block mb-2 text-sm font-medium text-gray-900">Mod depth</label>
+                    <label for="mod_depth" class="block mb-2 text-sm font-medium text-gray-900">Mod depth (%)</label>
                     <input type="number" id="mod_depth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0" placeholder="" name="mod_depth" value="{{ $data->mod_depth }}" required>
                 </div>
 
                 <div class="mb-6">
-                    <label for="offset" class="block mb-2 text-sm font-medium text-gray-900">Offset</label>
+                    <label for="offset" class="block mb-2 text-sm font-medium text-gray-900">Offset (KHz)</label>
                     <input type="number" id="offset" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0" placeholder="" name="offset" value="{{ $data->offset }}" required>
                 </div>
 
                 <div class="mb-6">
-                    <label for="step" class="block mb-2 text-sm font-medium text-gray-900">Step</label>
+                    <label for="step" class="block mb-2 text-sm font-medium text-gray-900">Step (KHz)</label>
                     <input type="number" id="step" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0" placeholder="" name="step" value="{{ $data->step }}" required>
                 </div>
 

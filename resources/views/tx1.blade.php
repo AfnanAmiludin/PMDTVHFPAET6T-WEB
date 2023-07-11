@@ -8,18 +8,30 @@
 
 @section('standBy')
     <div class="stand-by flex gap-5">
-        <div class="bg-green-700 rounded-2xl h-5 w-10"></div>
+        <div class="bg-gray-600 rounded-2xl h-5 w-10"></div>
         <h4>Stand By</h4>
     </div>
 @endsection
 
+@section('alarm')
+    <div class="alarm flex gap-5">
+
+        @if ($txOne->monitoring->vswr == 0)
+            <div class="bg-gray-600 rounded-2xl h-5 w-10"></div> 
+        @else
+            <div class="bg-red-600 rounded-2xl h-5 w-10"></div> 
+        @endif
+        <h4>Alarm</h4>
+    </div>
+@endsection
+
 @section('data')
-    <h4>{{ $txOne->monitoring->frequensi }}</h4>
+    <h4>{{ $txOne->monitoring->frequensi }} MHz</h4>
     <h4>{{ $txOne->monitoring->mode }}</h4>
     <h4>{{ $txOne->monitoring->line_in }}</h4>
-    <h4>{{ $txOne->monitoring->mod_depth }}</h4>
-    <h4>{{ $txOne->monitoring->offset }}</h4>
-    <h4>{{ $txOne->monitoring->step }}</h4>
+    <h4>{{ $txOne->monitoring->mod_depth }} %</h4>
+    <h4>{{ $txOne->monitoring->offset }} KHz</h4>
+    <h4>{{ $txOne->monitoring->step }} KHz</h4>
 @endsection
 
 @section('bar')
