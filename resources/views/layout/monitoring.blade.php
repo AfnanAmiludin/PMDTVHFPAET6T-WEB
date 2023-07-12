@@ -8,13 +8,13 @@
     <title>Monitoring</title>
 </head>
 <body>
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-around h-screen">
         <div class="w-1/2 m-auto p-6 bg-white border border-gray-200 rounded-lg shadow">
             <div class="flex justify-end">
                 @yield('button')
             </div>
-            <div class="bg-gray-400 p-5">
-                <div class="grid grid-cols-3 p-6 bg-blue-500 rounded-full items-center">
+            <div class="bg-gray-300 p-5 flex justify-between">
+                <div class="grid grid-cols-3 p-6 bg-blue-500 rounded-full items-center w-3/4">
                     <div class="information text-white font-semibold text-lg">
                         @yield('ready')
                         @yield('alarm')
@@ -39,6 +39,11 @@
                             @yield('data')
                         </div>
                     </div>
+                </div>
+                <div class="flex flex-col justify-center gap-3">
+                    <h4>PAE TET</h4>
+                    <div class="bg-black rounded-full h-14 w-32"></div>
+                    <div class="bg-black rounded-full h-14 w-32"></div>
                 </div>
             </div>
 
