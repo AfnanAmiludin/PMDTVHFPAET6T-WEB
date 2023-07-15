@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col justify-center gap-3">
-                    <h4>PAE TET</h4>
+                    <h4>PAE T6T</h4>
                     <div class="bg-black rounded-full h-14 w-32"></div>
                     <div class="bg-black rounded-full h-14 w-32"></div>
                 </div>
