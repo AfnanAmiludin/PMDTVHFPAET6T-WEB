@@ -30,7 +30,7 @@ class authController extends Controller
             return back()->with('loginError', 'login failed, please sign-in again!');
         }
         $request->session()->regenerate();
-        return redirect()->route('choose');
+        return redirect()->route('tx-1');
     }
     public function logout(Request $request)
     {

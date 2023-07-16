@@ -1,21 +1,21 @@
 @extends('layout.monitoring')
 @section('ready')
     <div class="ready flex gap-5">
-        <div class="bg-gray-600 rounded-2xl h-5 w-10"></div>
+        <div class="bg-green-400 rounded-2xl h-5 w-10"></div>
         <h4>Ready</h4>
     </div>
 @endsection
 
 @section('standBy')
     <div class="stand-by flex gap-5">
-        <div class="bg-green-400 rounded-2xl h-5 w-10"></div>
+        <div class="bg-gray-600 rounded-2xl h-5 w-10"></div>
         <h4>Stand By</h4>
     </div>
 @endsection
 @section('alarm')
     <div class="alarm flex gap-5">
 
-        @if ($txTwo->monitoring->vswr == 0)
+        @if ($txTwo->monitoring->vswr == 1)
             <div class="bg-gray-600 rounded-2xl h-5 w-10"></div> 
         @else
             <div class="bg-red-600 rounded-2xl h-5 w-10"></div> 

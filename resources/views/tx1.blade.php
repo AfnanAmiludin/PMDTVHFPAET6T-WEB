@@ -16,7 +16,7 @@
 @section('alarm')
     <div class="alarm flex gap-5">
 
-        @if ($txOne->monitoring->vswr == 0)
+        @if ($txOne->monitoring->vswr == 1)
             <div class="bg-gray-600 rounded-2xl h-5 w-10"></div> 
         @else
             <div class="bg-red-600 rounded-2xl h-5 w-10"></div> 
