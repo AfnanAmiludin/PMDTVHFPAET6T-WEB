@@ -9,13 +9,13 @@
 </head>
 <body>
     <div class="flex items-center justify-around h-screen">
-        <div class="w-1/2 m-auto p-6 bg-white border border-gray-200 rounded-lg shadow">
+        <div class="w-11/12 m-auto p-2 bg-white border border-gray-200 rounded-lg shadow lg:w-1/2 lg:p-6">
             <div class="flex justify-end">
                 @yield('button')
             </div>
-            <div class="bg-gray-300 p-5 flex justify-between">
-                <div class="grid grid-cols-3 p-6 bg-blue-500 rounded-full items-center w-3/4">
-                    <div class="information text-white font-semibold text-lg">
+            <div class="bg-gray-300 p-2 flex justify-between lg:p-5">
+                <div class=" flex justify-between md:justify-around lg:grid lg:grid-cols-3 p-2 lg:p-6 bg-blue-500 rounded-3xl lg:rounded-full items-center w-3/4">
+                    <div class="information flex flex-col gap-2 text-white font-semibold text-sm lg:text-lg">
                         @yield('ready')
                         @yield('alarm')
 
@@ -26,7 +26,7 @@
 
                         @yield('standBy')
                     </div>
-                    <div class="data bg-blue-300 border-black border grid grid-cols-2">
+                    <div class="data bg-blue-300 border-black border grid grid-cols-2 text-sm lg:text-md">
                         <div class="freq">
                             <h4>Freq</h4>
                             <h4>Mode</h4>
@@ -40,10 +40,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center gap-3">
+                <div class="flex flex-col justify-center items-center gap-3 text-sm">
                     <h4>PAE T6T</h4>
-                    <div class="bg-black rounded-full h-14 w-32"></div>
-                    <div class="bg-black rounded-full h-14 w-32"></div>
+                    <div class="bg-black rounded-full h-6 w-12 md:h-10 md:w-20 lg:h-14 lg:w-32"></div>
+                    <div class="bg-black rounded-full h-6 w-12 md:h-10 md:w-20 lg:h-14 lg:w-32"></div>
                 </div>
             </div>
 
