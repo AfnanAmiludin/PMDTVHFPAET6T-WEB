@@ -14,13 +14,16 @@
 
             <form action="/processtx" method="POST">
                 @csrf
+                @php
+                    $tx = 'tx1'
+                @endphp
                 <div class="flex flex-col gap-5">
                     <div class="flex items-center pl-4 border border-gray-200 rounded">
-                        <input id="bordered-checkbox-1" type="radio" value="tx1" name="choice" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        <input id="bordered-checkbox-1" type="radio" value="tx1" {{$tx === 'tx1' ? 'checked' : ''}} name="choice" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
                         <label for="bordered-checkbox-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900">TX 1 126.5 MHz</label>
                     </div>
                     <div class="flex items-center pl-4 border border-gray-200 rounded">
-                        <input id="bordered-checkbox-2" type="radio" value="tx2" name="choice" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        <input id="bordered-checkbox-2" type="radio" value="tx2" {{$tx === 'tx2' ? 'checked' : ''}} name="choice" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
                         <label for="bordered-checkbox-2" class="w-full py-4 ml-2 text-sm font-medium text-gray-900">TX 2 126.5 MHz</label>
                     </div>
                 </div>

@@ -66,7 +66,7 @@
     <script>
         function changeColor() {
             var element = document.getElementById("transmit");
-            element.classList.toggle("bg-gray-600");
+            element.classList.toggle("bg-green-400");
         }
         setInterval(changeColor, 1000);
     </script>
